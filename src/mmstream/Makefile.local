@@ -1,0 +1,4 @@
+## mmstream local Makefile
+MAKE=<Your path to GNU make>
+JAVAC=<Your path to a Java compiler>
+

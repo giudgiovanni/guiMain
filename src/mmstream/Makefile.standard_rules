@@ -1,0 +1,27 @@
+## mmstream Makefile standard rules
+
+all: package subpackages 
+
+package: $(addsuffix .class, $(INTERFACES) $(ABSTRACT_CLASSES) $(EXCEPTIONS) $(CLASSES))
+
+subpackages:
+ifneq ($(SUBPACKAGES), NO)
+	for i in $(SUBPACKAGES); do $(MAKE) -C $$i ; done
+endif
+
+%.class: %.java
+	$(JAVAC) $<
+
+
+realclean:
+ifneq ($(SUBPACKAGES), NO)
+	for i in $(SUBPACKAGES); do $(MAKE) -C $$i realclean; done
+endif
+	-rm *.class *~
+
+clean:
+ifneq ($(SUBPACKAGES), NO)
+	-for i in $(SUBPACKAGES); do $(MAKE) -C $$i clean; done
+endif
+	-rm  *~ 
+

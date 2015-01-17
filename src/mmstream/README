@@ -1,0 +1,10 @@
+How to use the mmstream application:
+
+1. Extract the mmstream.tar.gz file. 
+   This should result in the creation of a direcctory named 'mmstream'.
+2. Add the directory which contains the 'mmstream' directory
+   to your CLASSPATH environment variable.
+3. Call the java interpreter with argument 'mmstream.main.guiMain'.
+4. Laugh and send a bug report!
+
+tspeuker@informatik.uni-erlangen.de
